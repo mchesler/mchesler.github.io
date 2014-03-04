@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+  <head>
+    <title>foley.blog {{ page.title }}</title>
+    <meta name="robots" content="index,follow"/>
+    <meta name="mssmarttagspreventparsing" content="true"/>
+    <link rel="shortcut icon" href="/images/favicon.gif" type="image/gif" />
+    <link rel="icon" href="/images/favicon.gif" type="image/gif" />
+    <meta name="keywords" content="devops,scuba,new york city,parenting">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="Matt Chesler"/>
+    <meta name="description" content="The weblog of Matt Chesler, Parent, SCUBA Diver, DevOps Architect."/>
+    <meta name="dc.title" content="foley.blog"/>
+    <link rel="start" href="http://blog.chesler.co" title="foley.blog"/>
+    {% if page.content %}
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="{{ page.title | truncate:70}}"/>
+    <meta name="twitter:site" content="@CheslerMatt"/>
+    <meta name="twitter:creator" content="@CheslerMatt"/>
+    <meta name="twitter:description" content="{{ page.content | markdownify | strip_html | truncate:200 }}"/>
+    <meta name="twitter:url" content="http://blog.chesler.co{{ page.url }}">
+    <meta name="twitter:domain" content="chesler.co">
+    {% endif %}
+    <link href="/stylesheets/screen.css" media="screen" rel="Stylesheet" title="foley.blog" type="text/css" />
+    <script src="/javascripts/site.js" type="text/javascript"></script>
+  </head>
+
+  <body id="blog.chesler.co">
+    <div id="wrapper">
+
+      <div id="top"></div>
+
+      <div id="box">
+
+        <!-- masthead -->
+        <a href="/"><div id="masthead">
+        </div>
+        </a>
+
+        <div id="above_menu" title="home"></div>
+        <!-- end masthead -->
+
+        <div id="menu" style="display:inline">
+          <div id="menu_left_pad"></div>
+          {% if page.title == 'Work' %}
+          <a href="/work.html"><div id="menu_work_active"></div></a>
+          {% else %}
+          <a href="/work.html"><div id="menu_work"></div></a>
+          {% endif %}
+          <div id="menu_sep_1"></div>
+          {% if page.title == 'About' %}
+          <a href="/about.html"><div id="menu_about_active"></div></a>
+          {% else %}
+          <a href="/about.html"><div id="menu_about"></div></a>
+          {% endif %}
+          <div id="menu_sep_2"></div>
+          {% if page.is_page == null %}
+          <a href="/"><div id="menu_posts_active"></div></a>
+          {% else %}
+          <a href="/"><div id="menu_posts"></div></a>
+          {% endif %}
+          <div id="menu_sep_3"></div>
+          {% if page.title == 'Contact' %}
+          <a href="/contact.html"><div id="menu_contact_active"></div></a>
+          {% else %}
+          <a href="/contact.html"><div id="menu_contact"></div></a>
+          {% endif %}
+          <div id="menu_right_pad"></div>
+        </div>
+
+        <div id="content">
+          {{ content }}
+          <a href="/archives.html">&lt;&lt; Archives</a> | <a href="#" onclick="Element.toggle('search_content');return false;">Search</a>
+
+          <div id="search_content" style="display:none; margin-top:10px">
+            <form action="http://www.google.com/search" id="search_form" method="get">
+              <div id="search">
+                <b>Search:</b>&nbsp;&nbsp;<input type="text" name="q" id="q" value="Enter your terms, hit enter" onfocus="searchFocus()"/>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="footer">
+          <div id="footer_text">&copy; 2014 Matt Chesler</div>
+        </div>
+      </div>
+
+    </div>
+
+</body>
+</html>
